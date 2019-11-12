@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+
+    postgresql:
+        image: postgres:alpine
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: password
+        volumes:
+            - ./.db/script.sql:/docker-entrypoint-initdb.d/init.sql
+
+    rabbitmq:
+        build:
+            context: ./.docker/rabbitmq/
+            dockerfile: ./Dockerfile
+        ports:
+            - 4369:4369
+            - 5671:5671
+            - 5672:5672
+            - 15672:15672
+        environment:
+            RABBITMQ_DEFAULT_USER: local
+            RABBITMQ_DEFAULT_PASS: password
