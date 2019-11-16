@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "3cb2b3f9-fc27-4c85-bb00-037a165c2ec3",
+		"name": "user-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "POST /users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"names\": \"Sebastian\",\n\t\"surnames\": \"De La Roche\",\n\t\"nickname\": \"sebastian.delaroche\",\n\t\"email\": \"sebastian.delaroche.dev@gmail.com\",\n\t\"password\": \"12345\",\n\t\"birthday\": \"1995-03-03T00:00:00\",\n\t\"socialMediaAccounts\": [\n\t\t{ \"name\": \"facebook\", \"url\": \"assakjbasjkdb\"  }\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /users/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"names\": \"Sebastian\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8e431149-1cd6-4a8e-b329-0606e994f5e2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f670876b-b04e-4ff8-bc5c-8f661afe183a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "securities",
+			"item": [
+				{
+					"name": "GET /security/sign-in",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nickname\": \"sebastian.delaroche12\",\n\t\"password\": \"54321\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/security/sign-in",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"security",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /security/update-password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nickname\": \"sebastian.delaroche12\",\n\t\"password\": \"54321\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/security/update-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"security",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6d3d6166-4049-423f-a918-511160257c05",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad2865dc-1fa6-462a-beb3-d03613eaf673",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

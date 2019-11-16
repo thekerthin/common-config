@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "89a03e04-07df-41c0-9f5a-31b820e38f1d",
+		"name": "blog_service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "blogs",
+			"item": [
+				{
+					"name": "POST /blogs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"DevWeek Lima - Title\",\n\t\"description\": \"DevWeek Lima - Desciption\",\n\t\"content\": \"foo\",\n\t\"owner\": \"d0076662-fbc0-4570-9711-ed1fc3912cd1\",\n\t\"isPublic\": true\n}",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/blogs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
